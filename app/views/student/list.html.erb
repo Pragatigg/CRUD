@@ -1,0 +1,47 @@
+<% if @students.blank? %>
+  <p>There are no students in the system.</p>
+<% else %>
+  <div style="padding-bottom: 20px;">
+    <b>Student List:</b>
+  </div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Standard</th>
+        <th>Age</th>
+        <th>Hobbies</th>
+        <th>Percentage</th>
+        <th>Blood Group</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+          <td><%= student.standard %></td>
+          <td><%= student.age %></td>
+          <td><%= student.hobbies %></td>
+          <td><%= student.percentage %></td>
+          <td><%= student.blood_group %></td>
+          <td>
+            <button>Edit</button>
+            <button>
+              <%= link_to 'Delete', { :action=>'destroy', :id => student[:id] }, :method => 'delete' %>
+            </button>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<footer style="padding-top: 20px;">
+  <button>
+    <a href="/student/new">
+      Add student
+    </a>
+  </button>
+</footer>

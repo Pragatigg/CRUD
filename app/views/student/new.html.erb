@@ -1,0 +1,32 @@
+<h1>Add new student</h1>
+<%= form_tag :action => 'create' do %>
+  <p>
+    <label for='student_name'>Name:</label>
+    <%= text_field 'student', 'name' %>
+  </p>
+  <p>
+    <label for='student_email'>Email:</label>
+    <%= text_field 'student', 'email' %>
+  </p>
+  <p>
+    <label for="student_standard">Standard:</label>
+    <%= text_field 'student', 'standard' %>
+  </p>
+  <p>
+    <label for="student_age">Age:</label>
+    <%= number_field(:student, :age, in: 1..100, step: 1) %>
+  </p>
+  <p>
+    <label for="student_percentage">Percentage:</label>
+    <%= number_field(:student, :percentage, in: 1.0..100.0, step: 0.1) %>
+  </p>
+  <p>
+    <label for="student_blood_group">Blood Group:</label>
+    <%= text_field 'student', 'blood_group' %>
+  </p>
+  <p>
+    <label for="student_hobbies">Hobbies:</label>
+    <%= text_area 'student', 'hobbies' %>
+  </p>
+  <button type="submit">Add</button>
+<% end %>

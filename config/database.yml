@@ -1,0 +1,14 @@
+development:
+   adapter: postgresql
+   database: student_development
+   host: localhost
+
+test:
+   adapter: postgresql
+   database: student_test
+   host: localhost
+
+production:
+   adapter: postgresql
+   database: student_production
+   host: localhost
