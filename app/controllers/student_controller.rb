@@ -16,6 +16,12 @@ class StudentController < ApplicationController
     redirect_to student_list_url
   end
 
+  def update
+    @student = Student.find(params[:id])
+    @student.update_attributes(create_params)
+    redirect_to student_list_url
+  end
+
   def destroy
     Student.destroy(params[:id])
     redirect_to student_list_url

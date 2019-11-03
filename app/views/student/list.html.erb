@@ -28,7 +28,9 @@
           <td><%= student.percentage %></td>
           <td><%= student.blood_group %></td>
           <td>
-            <button>Edit</button>
+            <button>
+              <%= link_to 'Edit', { :action=>'show', :id => student[:id] }, :method => 'get' %>
+            </button>
             <button>
               <%= link_to 'Delete', { :action=>'destroy', :id => student[:id] }, :method => 'delete' %>
             </button>

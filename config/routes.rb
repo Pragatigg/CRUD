@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post 'student/create'
   get 'student/new'
   delete 'student/destroy'
+  patch 'student/update'
 end
